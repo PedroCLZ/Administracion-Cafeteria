@@ -33,6 +33,8 @@ $productos = $productoModel->obtenerProductos();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Administracion-Cafeteria/css/style.css">      <!-- HAY QUE AGREGARLO A TODOS -->
+
 
 </head>
 
@@ -65,7 +67,7 @@ $productos = $productoModel->obtenerProductos();
                             <div class="row align-items-center mb-5">
                                 <div class="col-4 col-sm-3">
                                     <!-- Imagen de producto -->
-                                    <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Producto">
+                                    <img class="w-100 rounded-circle mb-3 mb-sm-0" src="../img/menu-1.jpg" alt="Producto">
                                     <h6 class="menu-price">
                                         ₡<?= number_format($producto['PRECIO_UNITARIO']) ?>
                                     </h6>
