@@ -2,7 +2,7 @@
 function connection() {
 
 
-    $conn = oci_connect("ProyectoAdmin", "Proyecto123", "localhost/orcl","AL32UTF8");
+    $conn = oci_connect("ProyectoAdmin", "Proyecto123", "localhost/xe","AL32UTF8");
 
     if (!$conn) {
         $m = oci_error();
