@@ -1,14 +1,12 @@
 <?php
+include_once 'db_connection.php'; // Incluye la función connection()
+
 class ProductoModel {
     private $conn;
 
     public function __construct() {
-        $this->conn = oci_connect("ProyectoAdmin", "Proyecto123", "//localhost/orcl", "AL32UTF8");
-        if (!$this->conn) {
-            $m = oci_error();
-            echo "Error al conectar a la base de datos: " . $m['message'];
-            exit;
-        }
+        // Utiliza la conexión global
+        $this->conn = connection();
     }
 
     public function obtenerProductos() {
@@ -30,10 +28,6 @@ class ProductoModel {
 
         oci_free_statement($stmt);
         return $productos;
-    }
-
-    public function __destruct() {
-        oci_close($this->conn);
     }
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once 'models/ProductoModel.php';
+include_once 'models/ProductoModel.php';
 
 class MenuController {
     private $productoModel;
@@ -9,11 +9,8 @@ class MenuController {
     }
 
     public function mostrarMenu() {
-        // Obtener los productos desde el modelo
         $productos = $this->productoModel->obtenerProductos();
-
-        // Cargar la vista del menú
-        require_once 'views/menu.php';
+        include 'views/menu.php'; // Incluye la vista del menú
     }
 }
 ?>
