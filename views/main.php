@@ -28,6 +28,7 @@ include_once 'header.php';
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Administracion-Cafeteria/css/style.css">
 </head>
 
 <body>
@@ -71,7 +72,7 @@ include_once 'header.php';
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sobre Nosotros</h4>
                 <h1 class="display-4">Sirviendo desde 1950</h1>
-            </div>
+            </div> 
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Nuestra historia</h1>
@@ -89,9 +90,6 @@ include_once 'header.php';
                     <p>Comida sana es comida con conciencia. Los alimentos naturales y orgánicos están al alcance de todos, y es nuestra misión acercarle a ellos.
                         Además, se evitará los agroquímicos y preservantes tan presentes  en la industria alimenticia. ¡Sí se puede ser consciente y contar con opciones!
                         Mientras más nos unamos a la causa, menores serán los costos para los productores, ¡y todos salimos ganando!</p>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
                     <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>
                 </div>
             </div>

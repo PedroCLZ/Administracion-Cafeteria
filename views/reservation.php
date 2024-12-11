@@ -1,10 +1,10 @@
 <?php
 include_once 'header1.php';
-//require_once '../models/ProductoModel.php';
+//require_once '../models/ReservasModel.php';
 
-// Obtener productos desde el modelo
-//$productoModel = new ProductoModel();
-//$productos = $productoModel->obtenerProductos();
+// Obtener reservas desde el modelo
+//$reservasModel = new ReservasModel();
+//$reservas = $reservasModel->obtenerReservas();
 ?>
 
 
@@ -34,6 +34,7 @@ include_once 'header1.php';
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Administracion-Cafeteria/css/style.css">
 </head>
 
 <body>
@@ -45,7 +46,7 @@ include_once 'header1.php';
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
             <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Reservación</h1>
             <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-white"><a class="text-white" href="/Administracion-Cafeteria/index.php">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>
                 <p class="m-0 text-white">Reservación</p>
             </div>

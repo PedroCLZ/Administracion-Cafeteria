@@ -7,6 +7,7 @@ $productoModel = new ProductoModel();
 $productos = $productoModel->obtenerProductos();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,8 +34,7 @@ $productos = $productoModel->obtenerProductos();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Administracion-Cafeteria/css/style.css">      <!-- HAY QUE AGREGARLO A TODOS -->
-
+    <link rel="stylesheet" href="/Administracion-Cafeteria/css/style.css">
 
 </head>
 
@@ -44,7 +44,7 @@ $productos = $productoModel->obtenerProductos();
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
             <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Menú</h1>
             <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="index.php">Home</a></p>
+                <p class="m-0 text-white"><a class="text-white" href="/Administracion-Cafeteria/index.php">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>
                 <p class="m-0 text-white">Menú</p>
             </div>
@@ -67,7 +67,7 @@ $productos = $productoModel->obtenerProductos();
                             <div class="row align-items-center mb-5">
                                 <div class="col-4 col-sm-3">
                                     <!-- Imagen de producto -->
-                                    <img class="w-100 rounded-circle mb-3 mb-sm-0" src="../img/menu-1.jpg" alt="Producto">
+                                    <img class="w-100 rounded-circle mb-3 mb-sm-0" src="/Administracion-Cafeteria/img/menu-1.jpg" alt="Producto">
                                     <h6 class="menu-price">
                                         ₡<?= number_format($producto['PRECIO_UNITARIO']) ?>
                                     </h6>
