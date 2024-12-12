@@ -46,6 +46,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu text-capitalize">
+                            <a href="productos/productosView.php" class="dropdown-item">Prueba</a>
                             <a href="reservation.php" class="dropdown-item">Reservación</a>
                             <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                         </div>
