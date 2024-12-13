@@ -1,7 +1,19 @@
 <?php
-include_once 'header.php';
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'DESARROLLADOR') {
+        include 'headerDeveloper.php';
+    } else {
+        include 'headerClient.php';
+    }
+} else {
+    echo "Error: Usuario no autenticado.";
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

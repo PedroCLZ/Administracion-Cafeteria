@@ -9,19 +9,25 @@ class UserModel {
     }
 
     public function loginUser($correo, $contrasena) {
-        $stmt = oci_parse($this->conn, "BEGIN SP_LoginUsuario(:correo, :contrasena, :result); END;");
+        $stmt = oci_parse($this->conn, "BEGIN SP_LoginUsuario(:correo, :contrasena, :result, :tipoUsuario); END;");
         oci_bind_by_name($stmt, ':correo', $correo);
         oci_bind_by_name($stmt, ':contrasena', $contrasena);
         oci_bind_by_name($stmt, ':result', $result, 32);
-
+        oci_bind_by_name($stmt, ':tipoUsuario', $tipoUsuario, 32);
+    
         if (!oci_execute($stmt)) {
             $error = oci_error($stmt);
             throw new Exception("Error al iniciar sesión: " . $error['message']);
         }
-
+    
         oci_free_statement($stmt);
-        return $result > 0;
+    
+        if ($result > 0) {
+            return $tipoUsuario;
+        }
+        return false;
     }
+    
     public function registerUser($nombreUsuario, $contrasena, $tipoUsuario, $correo) {
         $stmt = oci_parse($this->conn, "BEGIN SP_RegistrarUsuario(:nombreUsuario, :contrasena, :tipoUsuario, :correo); END;");
         oci_bind_by_name($stmt, ':nombreUsuario', $nombreUsuario);

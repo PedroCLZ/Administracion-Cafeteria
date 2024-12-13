@@ -1,11 +1,38 @@
 <?php
-include_once 'header1.php';
-//require_once '../models/ReservasModel.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'DESARROLLADOR') {
+        include 'header1Developer.php';
+    } else {
+        include 'header1Client.php';
+    }
+} else {
+    echo "Error: Usuario no autenticado.";
+    exit;
+}
 
-// Obtener reservas desde el modelo
-//$reservasModel = new ReservasModel();
-//$reservas = $reservasModel->obtenerReservas();
+include_once '../controllers/ReservacionController.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre_cliente = $_POST['nombre_cliente'];
+    $email_cliente = $_POST['email_cliente'];
+    $fecha_reservacion = $_POST['fecha_reservacion']; // 'YYYY-MM-DD'
+    $hora_reservacion = $_POST['hora_reservacion']; // 'HH:MI'
+
+    // Combinar fecha y hora en un solo valor
+    $fecha_hora_reservacion = $fecha_reservacion . ' ' . $hora_reservacion . ':00'; // 'YYYY-MM-DD HH:MI:SS'
+
+    $controller = new ReservationController();
+    $controller->realizarReservacion($nombre_cliente, $email_cliente, $fecha_reservacion, $fecha_hora_reservacion);
+
+    header("Location: /Administracion-Cafeteria/views/reservation.php");
+    exit;
+}
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -23,7 +50,7 @@ include_once 'header1.php';
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -74,44 +101,31 @@ include_once 'header1.php';
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
-                            <h1 class="text-white mb-4 mt-5">Reserve su Mesa</h1>
-                            <form class="mb-5">
-                                <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent border-primary p-4" placeholder="Name"
-                                        required="required" />
+                    <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                        <h1 class="text-white mb-4 mt-5">Reserve su Mesa</h1>
+                        <form action="/Administracion-Cafeteria/views/reservation.php" method="POST" class="mb-5">
+                            <div class="form-group">
+                                <input type="text" name="nombre_cliente" class="form-control bg-transparent border-primary p-4" placeholder="Nombre" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email_cliente" class="form-control bg-transparent border-primary p-4" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <div class="date" id="date" data-target-input="nearest">
+                                    <input type="date" name="fecha_reservacion" class="form-control bg-transparent border-primary p-4" required />
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent border-primary p-4" placeholder="Email"
-                                        required="required" />
+                            </div>
+                            <div class="form-group">
+                                <div class="time" id="time" data-target-input="nearest">
+                                    <input type="time" name="hora_reservacion" class="form-control bg-transparent border-primary p-4" required />
                                 </div>
-                                <div class="form-group">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
-                                        <option selected>Person</option>
-                                        <option value="1">Person 1</option>
-                                        <option value="2">Person 2</option>
-                                        <option value="3">Person 3</option>
-                                        <option value="3">Person 4</option>
-                                    </select>
-                                </div>
-                                
-                                <div>
-                                    <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Book Now</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Reservar Ahora</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>

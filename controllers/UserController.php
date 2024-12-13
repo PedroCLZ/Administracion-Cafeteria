@@ -1,5 +1,5 @@
 <?php
-require_once 'models/UserModel.php';
+require_once '../models/UserModel.php';
 
 class UserController {
     private $model;
@@ -10,8 +10,12 @@ class UserController {
 
     public function login($data) {
         try {
-            $isValid = $this->model->loginUser($data['correo'], $data['contrasena']);
-            if ($isValid) {
+            $tipoUsuario = $this->model->loginUser($data['correo'], $data['contrasena']);
+            if ($tipoUsuario) {
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION['tipo_usuario'] = $tipoUsuario;
                 include_once 'views/main.php';
                 exit;
             } else {
@@ -21,6 +25,8 @@ class UserController {
             echo "Error: " . $e->getMessage();
         }
     }
+    
+    
     public function register($data) {
         try {
             $this->model->registerUser(

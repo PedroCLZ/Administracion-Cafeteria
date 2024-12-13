@@ -1,5 +1,17 @@
 <?php
-include_once 'header1.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'DESARROLLADOR') {
+        include 'header1Developer.php';
+    } else {
+        include 'header1Client.php';
+    }
+} else {
+    echo "Error: Usuario no autenticado.";
+    exit;
+}
 require_once '../models/ProductoModel.php';
 
 // Obtener productos desde el modelo

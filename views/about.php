@@ -1,3 +1,20 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'DESARROLLADOR') {
+        include 'header1Developer.php';
+    } else {
+        include 'header1Client.php';
+    }
+} else {
+    echo "Error: Usuario no autenticado.";
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,37 +45,7 @@
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0 nav-bar">
-        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-            <a href="/Administracion-Cafeteria/index.php" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto p-4">
-                    <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link">Home</a>
-                    <a href="about.php" class="nav-item nav-link active">About</a>
-                    <a href="service.php" class="nav-item nav-link">Service</a>
-                    <a href="menu.php" class="nav-item nav-link">Menú</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu text-capitalize">
-                            <a href="productos/productosView.php" class="dropdown-item">Productos</a>
-                            <a href="clientes/clientesView.php" class="dropdown-item">Clientes</a>
-                            <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
-                            <a href="reservation.php" class="dropdown-item">Reservation</a>
-                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+
 
 
     <!-- Page Header Start -->
