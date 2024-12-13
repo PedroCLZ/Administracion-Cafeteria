@@ -10,7 +10,7 @@ class ProductoController {
         
         // Asegurarse de pasar la variable productos a la vista
         include_once '../views/productosView.php'; // Vista donde se mostrarán los productos
-    }
+    } 
 
     // Insertar un nuevo producto
     public function insertarProducto($nombre, $descripcion, $id_categoria, $precio, $id_proveedor, $id_estado) {
@@ -32,7 +32,6 @@ class ProductoController {
         $productoModel->eliminarProducto($id_producto);
         header('Location: ../views/menu.php'); // Redirige después de la eliminación
     }
-
 
 }
 ?>

@@ -7,10 +7,8 @@ $productoModel = new ProductoModel();
 $productos = $productoModel->obtenerProductos();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>KOPPEE - Coffee Shop HTML Template</title>
@@ -39,10 +37,11 @@ $productos = $productoModel->obtenerProductos();
 </head>
 
 <body>
+    
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Menú</h1>
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase active">Menú</h1>
             <div class="d-inline-flex mb-lg-5">
                 <p class="m-0 text-white"><a class="text-white" href="/Administracion-Cafeteria/index.php">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>

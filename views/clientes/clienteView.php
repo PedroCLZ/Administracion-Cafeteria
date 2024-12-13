@@ -1,10 +1,10 @@
 <?php
-//include_once '../../views/header1.php'; // Ajusta la ruta si está en otro nivel de carpetas
-require_once '../../models/ProductoModel.php';
+//include_once '../../views/header.php';  // Ajusta la ruta si está en otro nivel de carpetas
+require_once '../../models/ClientesModel.php';
  
-// Obtener productos desde el modelo
-$productoModel = new ProductoModel();
-$productos = $productoModel->obtenerProductos();
+// Obtener clientes desde el modelo
+$clienteModel = new ClientesModel();
+$clientes = $clienteModel->obtenerClientes();
 ?>
 
 <!DOCTYPE html>
@@ -48,13 +48,13 @@ $productos = $productoModel->obtenerProductos();
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
                     <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link">Home</a>
-                    <a href="../about.php" class="nav-item nav-link active">About</a>
+                    <a href="../about.php" class="nav-item nav-link ">About</a>
                     <a href="../service.php" class="nav-item nav-link">Service</a>
                     <a href="../menu.php" class="nav-item nav-link">Menú</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu text-capitalize">
-                            <a href="../productos/productosView.php" class="dropdown-item active">Productos</a>
+                            <a href="../productos/productosView.php" class="dropdown-item ">Productos</a>
                             <a href="../clientes/clienteView.php" class="dropdown-item ">Clientes</a>
                             <a href="../colaboradores/colaboradorView.php" class="dropdown-item ">Colaboradores</a>
                             <a href="../reservation.php" class="dropdown-item">Reservation</a>
@@ -75,52 +75,53 @@ $productos = $productoModel->obtenerProductos();
     </div>
     <!-- Page Header End -->
 
-
+  
     <div class="container-fluid pt-5">
         <div class="container">
         <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Editar productos</h4>
-                <h1 class="display-4">Lista de productos</h1>
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Editar clientes</h4>
+                <h1 class="display-4">Lista de clientes</h1>
             </div>
 
-         <!-- Botón para agregar un nuevo producto -->
+         <!-- Botón para agregar un nuevo cliente -->
         <div class="mb-3">
-                <a href="insertar_Producto.php" class="btn btn-success">Agregar Producto</a>
+                <a href="insertar_Cliente.php" class="btn btn-success">Agregar Cliente</a>
             </div>
 
-            <!-- Tabla de productos -->
+            <!-- Tabla de clientes -->
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Imagen</th>
                         <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
+                        <th>Telefono</th>
+                        <th>Correo Electronico</th>
                         <th>Acción</th>     
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (!empty($productos)): ?>
-                        <?php foreach ($productos as $producto): ?>
+                    <?php if (!empty($clientes)): ?>
+                        <?php foreach ($clientes as $cliente): ?>
                             <tr>
                                 <td>
-                                    <!-- Imagen de producto -->
+                                    <!-- Imagen de cliente -->
                                     
-                                    <img class="w-100 rounded-circle" src="/Administracion-Cafeteria/img/menu-1.jpg" alt="Producto" style="width: 100px; height: 100px;">
+                                    <img class="w-100 rounded-circle" src="/Administracion-Cafeteria/img/testimonial-1.jpg" alt="Imagen del cliente" style="width: 100px; height: 100px;">                                    
                                 </td>
-                                <td><?= htmlspecialchars($producto['NOMBRE_PRODUCTO'], ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><?= htmlspecialchars($producto['DESCRIPCION'], ENT_QUOTES, 'UTF-8') ?></td>
-                                <td>₡<?= number_format($producto['PRECIO_UNITARIO'], 2) ?></td>
+                                <td><?= htmlspecialchars($cliente['NOMBRE_CLIENTE'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($cliente['TELEFONO_CLIENTE'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($cliente['CORREO_ELECTRONICO'], ENT_QUOTES, 'UTF-8') ?></td>
+                                
                                 <td>
                                     <!-- Botones de acción -->
-                                    <a href="actualizarProducto.php?id=<?= $producto['ID_PRODUCTO'] ?>" class="btn btn-warning btn-sm">Actualizar</a>         
-                                    <a href="eliminarProducto.php?id=<?= $producto['ID_PRODUCTO'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este producto?');">Eliminar</a>
+                                    <a href="actualizarCliente.php?id=<?= $cliente['ID_CLIENTE'] ?>" class="btn btn-warning btn-sm">Actualizar</a>         
+                                    <a href="eliminar_cliente.php?id=<?= $cliente['ID_CLIENTE'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este cliente?');">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay productos disponibles en este momento.</td>
+                        <td colspan="5" class="text-center">No se encontraron registros de clientes. Por favor, agrega nuevos clientes.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

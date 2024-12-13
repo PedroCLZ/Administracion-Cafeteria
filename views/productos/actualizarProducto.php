@@ -1,7 +1,7 @@
 <?php
 include_once '../header1.php';
 require_once '../../models/ProductoModel.php';
-
+ 
 // Obtener el ID del producto desde la URL
 $id_producto = $_GET['id'];
 
@@ -23,6 +23,12 @@ if (!$producto) {
     <title>Actualizar Producto</title>
 </head>
 <body>
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px"> 
+        </div>
+    </div>
+    <!-- Page Header End -->
 
     <div class="container pt-5">
         <h2>Actualizar Producto</h2>

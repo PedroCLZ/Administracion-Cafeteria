@@ -46,9 +46,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu text-capitalize">
-                            <a href="views/productos/productosView.php" class="dropdown-item">Prueba</a>
-                            <a href="Views/reservation.php" class="dropdown-item">Reservación</a>
-                            <a href="Views/testimonial.php" class="dropdown-item">Testimonial</a>
+                        <a href="productos/productosView.php" class="dropdown-item">Productos</a>
+                            <a href="clientes/clienteView.php" class="dropdown-item ">Clientes</a>
+                            <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
+                            <a href="reservation.php" class="dropdown-item">Reservación</a>
+                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
                     <a href="Views/contact.php" class="nav-item nav-link">Contact</a>

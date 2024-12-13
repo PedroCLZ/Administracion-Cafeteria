@@ -41,16 +41,19 @@
                 <div class="navbar-nav ml-auto p-4">
                     <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link">Home</a>
                     <a href="about.php" class="nav-item nav-link">About</a>
-                    <a href="service.php" class="nav-item nav-link">Service</a>
+                    <a href="service.php" class="nav-item nav-link active">Service</a>
                     <a href="menu.php" class="nav-item nav-link">Menú</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu text-capitalize">
+                            <a href="productos/productosView.php" class="dropdown-item">Productos</a>
+                            <a href="clientes/clientesView.php" class="dropdown-item">Clientes</a>
+                            <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
                             <a href="reservation.php" class="dropdown-item">Reservation</a>
                             <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
-                    <a href="contact.php" class="nav-item nav-link active">Contact</a>
+                    <a href="contact.php" class="nav-item nav-link ">Contact</a>
                 </div>
             </div>
         </nav>

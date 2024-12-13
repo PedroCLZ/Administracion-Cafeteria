@@ -1,5 +1,5 @@
 <?php
-include_once 'db_connection.php';
+include_once 'db_connection.php'; // Incluye la función connection()
 
 class ProductoModel {
     private $conn;
@@ -31,13 +31,12 @@ class ProductoModel {
         return $producto;
     }
     
-    
-    
-    
     // Obtener productos activos
     public function obtenerProductos() {
         $productos = [];
-        $query = "SELECT ID_PRODUCTO, NOMBRE_PRODUCTO, DESCRIPCION, PRECIO_UNITARIO FROM FIDE_PRODUCTOS_TB WHERE ID_ESTADO = 1";
+        $query = "SELECT ID_PRODUCTO, NOMBRE_PRODUCTO, DESCRIPCION, PRECIO_UNITARIO 
+        FROM FIDE_PRODUCTOS_TB 
+        WHERE ID_ESTADO = 1";
         $stmt = oci_parse($this->conn, $query);
 
         if (!oci_execute($stmt)) {
