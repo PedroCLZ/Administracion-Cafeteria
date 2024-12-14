@@ -1,5 +1,5 @@
 <?php
-include_once '../../views/header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/PromocionesModel.php';
 
 // Manejar el formulario cuando se envíe

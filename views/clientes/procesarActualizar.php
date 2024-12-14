@@ -1,17 +1,17 @@
 <?php
-include_once 'header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/ClientesModel.php';
 
 // Recibir los datos del formulario
-$id_cliente = $_POST['id_cliente'];
-$nombre_cliente = $_POST['nombre_cliente'];
-$telefono_cliente = $_POST['telefono_cliente'];
-$correo_electronico = $_POST['correo_electronico'];
-$id_pais = $_POST['id_pais'];
-$id_provincia = $_POST['id_provincia'];
-$id_canton = $_POST['id_canton'];
-$id_distrito = $_POST['id_distrito'];
-$id_estado = $_POST['id_estado']; 
+$id_cliente = $_POST['id_cliente'] ?? '';
+$nombre_cliente = $_POST['nombre_cliente'] ?? '';
+$telefono_cliente = $_POST['telefono_cliente'] ?? '';
+$correo_electronico = $_POST['correo_electronico'] ?? '';
+$id_pais = $_POST['id_pais'] ?? '';
+$id_provincia = $_POST['id_provincia'] ?? '';
+$id_canton = $_POST['id_canton'] ?? '';
+$id_distrito = $_POST['id_distrito'] ?? '';
+$id_estado = $_POST['id_estado'] ?? ''; 
 
 // Crear una instancia del modelo
 $clienteModel = new ClientesModel();

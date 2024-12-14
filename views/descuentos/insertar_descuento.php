@@ -1,5 +1,4 @@
 <?php
-include_once '../../views/header1.php';
 require_once '../../models/DescuentoModel.php';
 
 // Manejar el formulario cuando se envíe

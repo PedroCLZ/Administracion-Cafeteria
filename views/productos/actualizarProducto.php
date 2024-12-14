@@ -1,5 +1,5 @@
 <?php
-include_once '../header1.php';
+include_once '../header1Developer.php';
 require_once '../../models/ProductoModel.php';
  
 // Obtener el ID del producto desde la URL
@@ -21,6 +21,8 @@ if (!$producto) {
 <head>
     <meta charset="utf-8">
     <title>Actualizar Producto</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Page Header Start -->
@@ -31,6 +33,9 @@ if (!$producto) {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
+    
         <h2>Actualizar Producto</h2>
         <form action="procesarActualizar.php" method="POST">
             <input type="hidden" name="id_producto" value="<?= $producto['ID_PRODUCTO'] ?>">

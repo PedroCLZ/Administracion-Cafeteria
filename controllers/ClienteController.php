@@ -14,19 +14,21 @@ class clienteController {
 
     // Insertar un nuevo cliente
     public function insertarCliente($nombre, $correo_electronico, $telefono_cliente,$id_pais,
-     $id_provincia, $id_canton, $id_distrito) {
+     $id_provincia, $id_canton, $id_distrito, $id_estado) {
         $clienteModel = new clientesModel();
         $clienteModel->insertarCliente($nombre, $correo_electronico, $telefono_cliente,
-        $id_pais,$id_provincia, $id_canton, $id_distrito);
+        $id_pais,$id_provincia, $id_canton, $id_distrito, $id_estado);
         header('Location: ../views/menu.php'); // Redirige después de la inserción
     }
 
     // Actualizar un cliente
     public function actualizarCliente($id_cliente, $nombre, $correo_electronico, $telefono_cliente,$id_pais,
-    $id_provincia, $id_canton, $id_distrito) {
+    $id_provincia, $id_canton, $id_distrito, $id_estado) {
        $clienteModel = new clientesModel();
-       $clienteModel->actualizarCliente($id_cliente, $nombre, $correo_electronico, $telefono_cliente,
-       $id_pais,$id_provincia, $id_canton, $id_distrito);
+       $clienteModel->actualizarCliente($id_cliente, $nombre, 
+       $correo_electronico, $telefono_cliente,
+       $id_pais,$id_provincia, $id_canton,
+        $id_distrito, $id_estado);
        header('Location: ../views/menu.php'); // Redirige después de la inserción
    }
 

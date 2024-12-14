@@ -14,19 +14,20 @@ class ColaboradorController {
 
     // Insertar un nuevo colaborador
     public function insertarColaborador($nombre_colaborador, $apellido_colaborador, $correo, $id_puesto,
-     $id_rol, $telefono) {
+     $id_rol, $telefono, $id_estado) {
         $colaboradorModel = new colaboradoresModel();
         $colaboradorModel->insertarColaborador($nombre_colaborador,
-         $apellido_colaborador, $correo,$id_puesto,$id_rol, $telefono);
+         $apellido_colaborador, $correo,$id_puesto,
+         $id_rol, $telefono, $id_estado);
         header('Location: ../views/menu.php'); // Redirige después de la inserción
     }
 
     // Actualizar un colaborador
     public function actualizarColaborador($id_colaborador, $nombre_colaborador, $apellido_colaborador, 
-    $correo,$id_puesto, $id_rol, $telefono) {
+    $correo,$id_puesto, $id_rol, $telefono, $id_estado) {
        $colaboradorModel = new colaboradoresModel();
        $colaboradorModel->actualizarColaborador($id_colaborador, $nombre_colaborador, $apellido_colaborador,
-        $correo, $id_puesto,$id_rol, $telefono);
+        $correo, $id_puesto,$id_rol, $telefono, $id_estado);
        header('Location: ../views/menu.php'); // Redirige después de la inserción
    }
 

@@ -11,7 +11,7 @@ class ProductoModel {
 
     public function categoriaProductos() {
         $productos = [];
-        $query = "SELECT ID_PRODUCTO, NOMBRE_CATEGORIA,
+        $query = "SELECT ID_PRODUCTO, NOMBRE_CATEGORIA
                   FROM FIDE_CATEGORIA_PRODUCTOS_TB 
                   WHERE ID_ESTADO = 1";
         $stmt = oci_parse($this->conn, $query);

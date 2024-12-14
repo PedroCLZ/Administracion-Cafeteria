@@ -1,5 +1,5 @@
 <?php
-include_once '../../views/header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/ColaboradoresModel.php';
 
 // Manejar el formulario cuando se envíe
@@ -27,6 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Insertar Colaborador</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
 </head>
 <body>
      <!-- Page Header Start -->
@@ -37,36 +40,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
+    
         <h2>Agregar nuevo colaborador</h2>
         <form action="insertar_Colaborador.php" method="POST">
             <div class="form-group">
                 <label for="nombre_colaborador">Nombre del colaborador:</label>
-                <input type="text" class="form-control" id="nombre_colaborador" name="nombre_colaborador" value="<?= htmlspecialchars($colaborador['NOMBRE_COLABORADOR'], ENT_QUOTES, 'UTF-8') ?>" required>
+                <required class="form-control" id="nombre_colaborador" name="nombre_colaborador" value="<?= $colaborador['NOMBRE_COLABORADOR'] ?>" required>
             </div>
             
             <div class="form-group">
                 <label for="apellido_colaborador">Apellido colaborador:</label>
-                <input type="text" class="form-control" id="apellido_colaborador" name="apellido_colaborador" required><?= htmlspecialchars($colaborador['APELLIDO_COLABORADOR'], ENT_QUOTES, 'UTF-8') ?></input>
+                <required class="form-control" id="apellido_colaborador" name="apellido_colaborador" value ="<?= $colaborador['APELLIDO_COLABORADOR']?>" required>
             </div>
 
             <div class="form-group">
                 <label for="correo">Correo Electronico:</label>
-                <textarea class="form-control" id="correo" name="correo" required><?= htmlspecialchars($colaboraodr['CORREO'], ENT_QUOTES, 'UTF-8') ?></textarea>
+                <required class="form-control" id="correo" name="correo" value="<?= $colaborador['CORREO']?>" required>
             </div>
 
             <div class="form-group">
                 <label for="id_puesto">Puesto:</label>
-                <input type="text" class="form-control" id="id_puesto" name="id_puesto" value="<?= $colaborador['ID_PUESTO'] ?>" required>
+                <required class="form-control" id="id_puesto" name="id_puesto" value="<?= $colaborador['ID_PUESTO'] ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="id_rol">Rol:</label>
-                <input type="text" class="form-control" id="id_rol" name="id_rol" value="<?= $colaborador['ID_ROL'] ?>" required>
+                <required class="form-control" id="id_rol" name="id_rol" value="<?= $colaborador['ID_ROL'] ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Telefono:</label>
-                <input type="number" class="form-control" id="telefono" name="telefono" value="<?= $cliente['TELEFONO'] ?>" required>
+                <input type="number" class="form-control" id="telefono" name="telefono" value="<?= $colaborador['TELEFONO'] ?>" required>
             </div>
 
             <div class="form-group">

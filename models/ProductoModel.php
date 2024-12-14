@@ -8,6 +8,7 @@ class ProductoModel {
         // Utiliza la conexión global
         $this->conn = connection();
     }
+    
 
     // Obtener un producto por su ID
     public function obtenerProductoPorId($id_producto) {
@@ -109,6 +110,37 @@ class ProductoModel {
         oci_free_statement($stmt);
     }
 
+    public function obtenerCategorias() {
+        $categorias = [];
+        $query = "SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM FIDE_CATEGORIA_PRODUCTOS_TB WHERE ID_ESTADO = 1";
+        $stmt = oci_parse($this->conn, $query);
+        if (!oci_execute($stmt)) {
+            $m = oci_error($stmt);
+            echo "Error al ejecutar la consulta: " . $m['message'];
+            return $categorias;
+        }
+        while ($row = oci_fetch_assoc($stmt)) {
+            $categorias[] = $row;
+        }
+        oci_free_statement($stmt);
+        return $categorias;
+    }
+    
+    public function obtenerProveedores() {
+        $proveedores = [];
+        $query = "SELECT ID_PROVEEDOR, NOMBRE_PROVEEDOR FROM FIDE_PROVEEDORES_TB WHERE ID_ESTADO = 1";
+        $stmt = oci_parse($this->conn, $query);
+        if (!oci_execute($stmt)) {
+            $m = oci_error($stmt);
+            echo "Error al ejecutar la consulta: " . $m['message'];
+            return $proveedores;
+        }
+        while ($row = oci_fetch_assoc($stmt)) {
+            $proveedores[] = $row;
+        }
+        oci_free_statement($stmt);
+        return $proveedores;
+    }
     
 }
 ?>

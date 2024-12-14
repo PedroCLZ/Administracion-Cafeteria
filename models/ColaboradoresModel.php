@@ -13,7 +13,7 @@ class ColaboradoresModel {
     public function obtenerColaboradoresPorID($id_colaborador) {
         $colaborador = null;
         $query = "SELECT ID_COLABORADOR, NOMBRE_COLABORADOR, APELLIDO_COLABORADOR, CORREO,
-        ID_PUESTO, ID_ROL,  TELEFONO
+        ID_PUESTO, ID_ROL,  TELEFONO, ID_ESTADO
                   FROM FIDE_COLABORADORES_TB WHERE ID_COLABORADOR = :id_colaborador";
         $stmt = oci_parse($this->conn, $query);
 
@@ -56,9 +56,9 @@ class ColaboradoresModel {
 
     // Insertar un colaborador
     public function insertarColaborador($nombre_colaborador, $apellido_colaborador, $correo,$id_puesto,
-    $id_rol, $telefono) {
+    $id_rol, $telefono, $id_estado) {
         $query = "BEGIN SP_INSERTAR_COLABORADOR(:nombre_colaborador, :apellido_colaborador, :correo, :id_puesto,
-        :id_rol, :id_estado); END;";
+        :id_rol, :telefono, :id_estado); END;";
         $stmt = oci_parse($this->conn, $query);
         
         oci_bind_by_name($stmt, ":nombre_colaborador", $nombre_colaborador);
@@ -79,7 +79,7 @@ class ColaboradoresModel {
 
     // Actualizar un producto
     public function actualizarColaborador($id_colaborador, $nombre_colaborador, $apellido_colaborador, $correo,$id_puesto,
-    $id_rol, $telefono) {
+    $id_rol, $telefono, $id_estado) {
         $query = "BEGIN SP_ACTUALIZAR_COLABORADOR(:id_colaborador, :nombre_colaborador, :apellido_colaborador, :correo, :id_puesto,
         :id_rol, :telefono, :id_estado); END;";
         $stmt = oci_parse($this->conn, $query);

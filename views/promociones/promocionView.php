@@ -1,5 +1,5 @@
 <?php
-//include_once '../../views/header.php';  // Ajusta la ruta si está en otro nivel de carpetas
+//include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/PromocionesModel.php';
  
 // Obtener promociones desde el modelo
@@ -36,34 +36,34 @@ $promociones = $promocionModel->obtenerPromociones();
      
 </head>
 <body>
-        <!-- Navbar Start -->
+    <!-- Navbar Start -->
         <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
             <a href="/Administracion-Cafeteria/index.php" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
+                <h1 class="m-0 display-4 text-uppercase text-white">Los Cafeteros</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link">Home</a>
-                    <a href="../about.php" class="nav-item nav-link ">About</a>
-                    <a href="../service.php" class="nav-item nav-link">Service</a>
+                    <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link">Inicio</a>
+                    <a href="../about.php" class="nav-item nav-link active">Nosotros</a>
+                    <a href="../service.php" class="nav-item nav-link">Servicios</a>
                     <a href="../menu.php" class="nav-item nav-link">Menú</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Administracion</a>
                         <div class="dropdown-menu text-capitalize">
-                            <a href="../productos/productosView.php" class="dropdown-item ">Productos</a>
+                            <a href="../productos/productosView.php" class="dropdown-item">Productos</a>
                             <a href="../clientes/clienteView.php" class="dropdown-item ">Clientes</a>
                             <a href="../colaboradores/colaboradorView.php" class="dropdown-item ">Colaboradores</a>
                             <a href="../descuentos/descuentosView.php" class="dropdown-item">Descuentos</a>
                             <a href="../promociones/promocionView.php" class="dropdown-item">Promociones</a>
-                            <a href="../reservation.php" class="dropdown-item">Reservation</a>
-                            <a href="../testimonial.php" class="dropdown-item">Testimonial</a>
+                            <a href="../reservation.php" class="dropdown-item">Reservacion</a>
+                            <a href="../testimonial.php" class="dropdown-item">Testimonios</a>
                         </div>
                     </div>
-                    <a href="../contact.php" class="nav-item nav-link">Contact</a>
+                    <a href="../contact.php" class="nav-item nav-link">Contacto</a>
                 </div>
             </div>
         </nav>

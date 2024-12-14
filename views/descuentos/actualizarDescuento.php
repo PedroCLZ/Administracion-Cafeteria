@@ -1,5 +1,4 @@
 <?php
-include_once '../header1.php';
 require_once '../../models/DescuentoModel.php';
   
 // Obtener el ID del descuento desde la URL

@@ -1,6 +1,7 @@
 <?php
 include_once 'models/ProductoModel.php';
 
+
 class ProductoController {
 
     // Mostrar todos los productos
@@ -22,7 +23,9 @@ class ProductoController {
     // Actualizar un producto
     public function actualizarProducto($id_producto, $nombre, $descripcion, $id_categoria, $precio, $id_proveedor, $id_estado) {
         $productoModel = new ProductoModel();
-        $productoModel->actualizarProducto($id_producto, $nombre, $descripcion, $id_categoria, $precio, $id_proveedor, $id_estado);
+        $productoModel->actualizarProducto($id_producto, $nombre, 
+        $descripcion, $id_categoria, $precio, 
+        $id_proveedor, $id_estado);
         header('Location: ../views/menu.php'); // Redirige después de la actualización
     }
 
@@ -32,6 +35,5 @@ class ProductoController {
         $productoModel->eliminarProducto($id_producto);
         header('Location: ../views/menu.php'); // Redirige después de la eliminación
     }
-
 }
 ?>

@@ -1,5 +1,4 @@
 <?php
-include_once '../../views/header1.php';
 require_once '../../models/ClientesModel.php';
 
 // Manejar el formulario cuando se envíe
@@ -29,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Insertar Cliente</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
      <!-- Page Header Start -->
@@ -39,6 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
+    
         <h2>Agregar nuevo cliente</h2>
         <form action="insertar_Cliente.php" method="POST">
             <div class="form-group">

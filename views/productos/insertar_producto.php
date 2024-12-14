@@ -1,5 +1,5 @@
 <?php
-include_once '../../views/header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/ProductoModel.php';
 
 // Manejar el formulario cuando se envíe
@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Insertar Producto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
 </head>
 <body>
      <!-- Page Header Start -->
@@ -36,6 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
+    
         <h2>Agregar Nuevo Producto</h2>
         <form action="insertar_Producto.php" method="POST">
             <div class="form-group">

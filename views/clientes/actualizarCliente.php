@@ -1,5 +1,5 @@
 <?php 
-include_once '../header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/ClientesModel.php'; 
 
 // Obtener el ID del cliente desde la URL
@@ -21,6 +21,9 @@ if (!$cliente) {
 <head>
     <meta charset="utf-8">
     <title>Actualizar cliente</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
 </head>
 <body>
     <!-- Page Header Start -->
@@ -31,6 +34,9 @@ if (!$cliente) {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
+    
         <h2>Actualizar cliente</h2>
         <form action="procesarActualizar.php" method="POST">
             <input type="hidden" name="id_cliente" value="<?= $cliente['ID_CLIENTE'] ?>">

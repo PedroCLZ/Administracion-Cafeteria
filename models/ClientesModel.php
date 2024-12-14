@@ -13,7 +13,7 @@ class ClientesModel {
     public function obtenerClientesPorID($id_cliente) {
         $cliente = null;
         $query = "SELECT ID_CLIENTE, NOMBRE_CLIENTE, CORREO_ELECTRONICO, TELEFONO_CLIENTE,
-        ID_PAIS, ID_PROVINCIA,  ID_CANTON, ID_DISTRITO
+        ID_PAIS, ID_PROVINCIA,  ID_CANTON, ID_DISTRITO, ID_ESTADO
                   FROM FIDE_CLIENTES_TB WHERE ID_CLIENTE = :id_cliente";
         $stmt = oci_parse($this->conn, $query);
 
@@ -56,7 +56,7 @@ class ClientesModel {
 
     // Insertar un producto
     public function insertarCliente($nombre, $correo_electronico, $telefono_cliente,$id_pais,
-    $id_provincia, $id_canton, $id_distrito) {
+    $id_provincia, $id_canton, $id_distrito, $id_estado) {
         $query = "BEGIN SP_INSERTAR_CLIENTE(:nombre_cliente, :correo_electronico, :telefono_cliente, :id_pais,:id_provincia,
         :id_canton, :id_distrito, :id_estado); END;";
         $stmt = oci_parse($this->conn, $query);
@@ -80,7 +80,7 @@ class ClientesModel {
 
     // Actualizar un producto
     public function actualizarCliente($id_cliente, $nombre, $correo_electronico, $telefono_cliente,$id_pais,
-    $id_provincia, $id_canton, $id_distrito) {
+    $id_provincia, $id_canton, $id_distrito, $id_estado) {
         $query = "BEGIN SP_ACTUALIZAR_CLIENTE(:id_cliente, :nombre_cliente, :correo_electronico, :telefono_cliente, :id_pais,:id_provincia,
         :id_canton, :id_distrito, :id_estado); END;";
         $stmt = oci_parse($this->conn, $query);

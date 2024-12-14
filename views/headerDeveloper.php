@@ -32,28 +32,30 @@
     <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
             <a href="/Administracion-Cafeteria/index.php" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
+                <h1 class="m-0 display-4 text-uppercase text-white">Los Cafeteros</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link active">Home</a>
-                    <a href="Views/about.php" class="nav-item nav-link">About</a>
-                    <a href="Views/service.php" class="nav-item nav-link">Service</a>
+                    <a href="/Administracion-Cafeteria/index.php" class="nav-item nav-link active">Inicio</a>
+                    <a href="Views/about.php" class="nav-item nav-link">Nosotros</a>
+                    <a href="Views/service.php" class="nav-item nav-link">Servicios</a>
                     <a href="Views/menu.php" class="nav-item nav-link">Menú</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Administracion</a>
                         <div class="dropdown-menu text-capitalize">
                         <a href="productos/productosView.php" class="dropdown-item">Productos</a>
                             <a href="clientes/clienteView.php" class="dropdown-item ">Clientes</a>
                             <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
+                            <a href="colaboradores/colaboradorView.php" class="dropdown-item">Descuentos</a>
+                            <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
                             <a href="reservation.php" class="dropdown-item">Reservación</a>
-                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+                            <a href="testimonial.php" class="dropdown-item">Testimonios</a>
                         </div>
                     </div>
-                    <a href="Views/contact.php" class="nav-item nav-link">Contact</a>
+                    <a href="Views/contact.php" class="nav-item nav-link">Contacto</a>
                 </div>
             </div>
         </nav>

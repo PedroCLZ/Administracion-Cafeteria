@@ -1,5 +1,5 @@
 <?php 
-include_once '../header1.php';
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas
 require_once '../../models/ColaboradoresModel.php'; 
 
 // Obtener el ID del colaborador desde la URL
@@ -7,7 +7,7 @@ $id_colaborador = $_GET['id'];
 
 // Obtener los datos del colaborador desde el modelo
 $colaboradorModel = new ColaboradoresModel();
-$colaborador = $colaboradorModel->obtenerColaboradoresPorId($id_colaborador);
+$colaborador = $colaboradorModel->obtenerColaboradoresPorID($id_colaborador);
 
 // Si no existe el colaborador, redirigir o mostrar error
 if (!$colaborador) {
@@ -31,6 +31,8 @@ if (!$colaborador) {
     <!-- Page Header End -->
 
     <div class="container pt-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i> </button>
         <h2>Actualizar colaborador</h2>
         <form action="procesarActualizar.php" method="POST">
             <input type="hidden" name="id_colaborador" value="<?= $colaborador['ID_COLABORADOR'] ?>">
@@ -42,7 +44,7 @@ if (!$colaborador) {
             
             <div class="form-group">
                 <label for="apellido_colaborador">Apellido colaborador:</label>
-                <input type="text" class="form-control" id="apellido_colaborador" name="apellido_colaborador" required><?= htmlspecialchars($colaborador['APELLIDO_COLABORADOR'], ENT_QUOTES, 'UTF-8') ?></input>
+                <input type="text" class="form-control" id="apellido_colaborador" name="apellido_colaborador" value="<?= htmlspecialchars($colaborador['APELLIDO_COLABORADOR'], ENT_QUOTES, 'UTF-8') ?> "required>
             </div>
 
             <div class="form-group">
@@ -60,7 +62,7 @@ if (!$colaborador) {
                 <input type="text" class="form-control" id="id_rol" name="id_rol" value="<?= $colaborador['ID_ROL'] ?>" required>
             </div>
 
-            <<div class="form-group">
+            <div class="form-group">
                 <label for="telefono">Telefono:</label>
                 <input type="number" class="form-control" id="telefono" name="telefono" value="<?= $colaborador['TELEFONO'] ?>" required>
             </div>

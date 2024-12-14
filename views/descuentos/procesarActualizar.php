@@ -1,5 +1,5 @@
 <?php
-include_once 'header1.php';  
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas 
 require_once '../../models/DescuentoModel.php';
 
 // Recibir los datos del formulario
@@ -19,5 +19,5 @@ $descuentoModel->actualizarDescuento($id_descuento, $nombre_descuento, $descripc
 // Redirigir a la vista de descuentos después de la actualización
 header('Location: descuentosView.php');
 exit;
+
 ?> 
- 

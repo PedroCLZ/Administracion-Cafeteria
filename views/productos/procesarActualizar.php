@@ -1,6 +1,5 @@
 <?php
-include_once 'header1.php';
-
+include_once '../../views/header1Developer.php'; // Ajusta la ruta si está en otro nivel de carpetas\
 require_once '../../models/ProductoModel.php';
 
 // Recibir los datos del formulario
@@ -13,7 +12,7 @@ $id_proveedor = $_POST['id_proveedor'];
 $id_estado = $_POST['id_estado'];
 
 // Crear una instancia del modelo
-$productoModel = new ProductoModel();
+$productoModel = new ProductoModel(); 
 
 // Llamar al procedimiento almacenado para actualizar el producto
 $productoModel->actualizarProducto($id_producto, $nombre, $descripcion, $id_categoria, $precio, $id_proveedor, $id_estado);
