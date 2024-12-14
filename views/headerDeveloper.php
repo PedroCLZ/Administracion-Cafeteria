@@ -53,9 +53,15 @@
                             <a href="colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
                             <a href="reservation.php" class="dropdown-item">Reservación</a>
                             <a href="testimonial.php" class="dropdown-item">Testimonios</a>
+                        <a href="views/productos/productosView.php" class="dropdown-item">Productos</a>
+                            <a href="views/clientes/clienteView.php" class="dropdown-item ">Clientes</a>
+                            <a href="views/colaboradores/colaboradorView.php" class="dropdown-item">Colaboradores</a>
+                            <a href="views/reservation.php" class="dropdown-item">Reservación</a>
+                            <a href="views/testimonial.php" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
                     <a href="Views/contact.php" class="nav-item nav-link">Contacto</a>
+                    <a href="Views/contact.php" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </nav>
